@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <div class="main-con">
+        <header id="nav">
+            <a href="/"><i class="far fa-calendar-alt">Today</i></a>
+            <a href="/work"><i class="far fa-clone">Work</i></a>
+        </header>
+        <div class="container">
+            <div class="date-container">
+                <% if(route === 'home'){ %>
+                    <h1 class="heading"><%= dateMonth %></h1>
+                <% }else{ %>
+                    <h1 class="heading"><%= listTitle %></h1>
+                <% } %>
+            </div>
+        </div>
+        <div class="box-con">
+            <div class="box">
+                <% items.forEach(item => { %>
+                <form action="/delete" method="post">
+                    <div class="item">
+                        <input type="checkbox" onChange="this.form.submit()" name="checkbox" value="<%= item._id %>" class="cut-checkbox">
+                        <p class="cut-text"><%= item.name %></p>
+                    </div>
+                    <input type="hidden" name="listName" value="<%= listTitle %>">
+                </form>
+                <% }); %>  
+                <form class="item" action="/" method="post" id="addItemForm">
+                    <input type="text" name="newItem" id="textbox" placeholder="Add Item" autocomplete="off">
+                    <button type="submit" name="list" value="<%= listTitle %>" class="btn">+</button>
+                </form>
+            </div>
+        </div>
+        <footer>
+            Copyright © <%= year %>
+        </footer>
+    </div>
+</body>
+</html>

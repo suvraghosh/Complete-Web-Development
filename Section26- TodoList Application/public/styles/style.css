@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    background-color: #e4e9fd;
+    background-image: -webkit-linear-gradient(110deg, #83c1e3 50%, #e4e9fd 50%);
+    min-height: 1000px;
+    font-size: 25px;
+    font-family: Helvetica, sans-serif;
+}
+
+.main-con {
+    margin: 7px;
+}
+
+#nav {
+    height: 10vh;
+    position: relative;
+}
+#nav::before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: #b7e6ff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    z-index: -1;
+    transform-origin: left;
+}
+#nav:hover::before{
+    transform: scaleX(1);
+    transform-origin: right;
+}
+#nav a i {
+    padding: 30px 12px 30px 50px;
+}
+#nav a i:hover{
+    color: rgb(0, 36, 126);
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 13px;
+}
+
+.date-container {
+    width: 543px;
+    background-color: skyblue;
+    border-radius: 10px;
+    box-shadow: 8px 10px 11px 0px rgb(33, 61, 83);
+    border: 1px solid rgb(33, 61, 83);
+}
+
+.heading {
+    padding: 3px 60px;
+    color: #e4e9fd;
+    font-family: "Crimson Text", serif;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.box-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box {
+    margin-top: 70px;
+    width: 530px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 0px 15px 3px rgba(0, 0, 0, 0.3);
+}
+
+.cut-text,
+.cut-checkbox {
+    margin-left: 20px;
+}
+
+.cut-checkbox:checked+p {
+    text-decoration: line-through;
+    text-decoration-color: powderblue;
+    color: crimson;
+}
+
+.item {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+#textbox {
+    text-align: center;
+    width: 417px;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 200;
+    border: none;
+    height: 76px;
+    margin-right: 31px;
+    letter-spacing: 2px;
+}
+
+.btn {
+    background-color: skyblue;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: 3px solid rgb(169, 218, 255);
+    font-size: 1rem;
+    color: #fff;
+    outline-offset: -10px;
+    transition: 0.3s;
+    border: none;
+}
+.btn:hover{
+    outline-offset: 2px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: rgb(81, 0, 0);
+    font-size: 20px;
+}
